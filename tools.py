@@ -40,7 +40,7 @@ def _require_text(text: str) -> None:
 def _error(name: str, exc: Exception) -> str:
     """Keep failures useful to the agent without echoing credential values."""
     message = str(exc)
-    for key in ("GOOGLE_API_KEY", "LANGSMITH_API_KEY"):
+    for key in ("GROQ_API_KEY", "LANGSMITH_API_KEY"):
         secret = os.getenv(key)
         if secret:
             message = message.replace(secret, "[redacted]")

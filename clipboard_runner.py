@@ -99,7 +99,7 @@ def is_limit_error(exc: Exception) -> bool:
 
 def safe_error(exc: Exception) -> str:
     message = str(exc)
-    for key in ("GROQ_API_KEY", "LANGSMITH_API_KEY", "GOOGLE_API_KEY"):
+    for key in ("GROQ_API_KEY", "LANGSMITH_API_KEY"):
         secret = os.getenv(key)
         if secret:
             message = message.replace(secret, "[redacted]")

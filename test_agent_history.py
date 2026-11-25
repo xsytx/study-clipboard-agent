@@ -1,4 +1,4 @@
-"""Regression checks for the notebook's Gemini content-block/history boundary."""
+"""Regression checks for the notebook's LLM content-block/history boundary."""
 
 import asyncio
 import json
