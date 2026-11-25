@@ -151,7 +151,7 @@ def detect_language(text: str) -> str:
 
 @tool
 def translate_text(text: str, target_language: str) -> str:
-    """Translate selected text with Gemini to en (English), ru (Russian), or kz (Kazakh)."""
+    """Translate selected text with the LLM to en (English), ru (Russian), or kz (Kazakh)."""
     try:
         language = target_language.strip().lower()
         if language not in LANGUAGES:
@@ -168,7 +168,7 @@ def translate_text(text: str, target_language: str) -> str:
 
 @tool
 def explain_selection(text: str) -> str:
-    """Explain selected text or a concept in simple terms with a concise Gemini response."""
+    """Explain selected text or a concept in simple terms with a concise LLM response."""
     try:
         return _text_chain(
             "Explain the selected text or concept for a student in simple terms. "
@@ -181,7 +181,7 @@ def explain_selection(text: str) -> str:
 
 @tool
 def grammar_check(text: str) -> str:
-    """Fix English grammar with Gemini; return corrected text and a list of changes."""
+    """Fix English grammar with the LLM; return corrected text and a list of changes."""
     try:
         return _text_chain(
             "Check and correct English grammar, spelling, and punctuation without "
@@ -196,7 +196,7 @@ def grammar_check(text: str) -> str:
 
 @tool
 def make_flashcards(text: str) -> Union[List[Flashcard], str]:
-    """Generate validated flashcards with Gemini, export Anki CSV, and try AnkiConnect.
+    """Generate validated flashcards with the LLM, export Anki CSV, and try AnkiConnect.
 
     Pass the full relevant text, including an earlier explanation when the user
     says 'from that'. Returns Flashcard objects on success or an error string.
