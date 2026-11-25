@@ -1,0 +1,11 @@
+.env
+__pycache__/
+notes.db
+exports/
+.venv/
+*.pyc
+.ipynb_checkpoints/
+.env.*
+!.env.example
+notes.db-*
+*.py[cod]
