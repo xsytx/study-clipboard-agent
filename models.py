@@ -14,6 +14,6 @@ class Flashcard(BaseModel):
 
 
 class FlashcardSet(BaseModel):
-    """The schema Gemini must return when generating flashcards."""
+    """The schema the LLM must return when generating flashcards."""
 
     cards: List[Flashcard] = Field(min_length=1, max_length=12)
